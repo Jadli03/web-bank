@@ -90,6 +90,22 @@ main .loan-list ul li{
    .about-page h1 {
     text-align: center;
     }
+
+.net-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form{
+    margin-top: 30px;
+    padding: 30px;
+    background-color: #3a7fba;
+    color: white;
+    border-radius: 10%;
+}
+
 footer{
    margin-top: auto;
     padding: 10px 10px 0px 10px;
