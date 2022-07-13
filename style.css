@@ -1,0 +1,103 @@
+body{
+    margin:0;
+    padding: 0;
+    height: 100vh;
+    margin:0px 120px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+header {
+  background: linear-gradient(to bottom,#3a7fba 1%,#295e99 100%) ;
+}
+
+header h1 {
+    display: inline-block;
+    margin-left: 50px;
+    color: white;
+}
+
+nav{
+    background-color: #3a7fba;
+    text-align: center;
+    width: 100%;;
+    margin: 0;
+    padding: 0;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+}
+nav ul li{
+    margin-left: 15px;
+}
+nav a {
+    text-decoration:  none;
+    color:white;
+}
+nav li:hover {
+  background-color: skyblue;
+}
+.contact-main{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+main img{
+    width: 100%;
+}
+
+main .loan-list ul {
+   list-style: none;
+   display: flex;
+   justify-content: space-around;
+   margin: 0;
+   background-color: #3a7fba;
+}
+
+main .loan-list ul li{
+    margin-top:10px;
+    color: white;
+ }
+
+ main .loan-list ul li img{
+    width: 50%;
+ }
+ li h3,p {
+    padding:0;
+    margin: 10px;
+ }
+
+ /* main .loan-list ul li span{
+    color: white; 
+ } */
+
+   .about-page {
+        text-align: justify;
+        background-color: #3a7fba;
+        color: white;
+   }
+
+   .about-page h1 {
+    text-align: center;
+    }
+footer{
+   margin-top: auto;
+    padding: 10px 10px 0px 10px;
+    height: 20px;
+    color: white;
+    background-color: #3a7fba;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
