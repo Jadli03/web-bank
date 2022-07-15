@@ -120,10 +120,10 @@
           alert("for home loan duration can not be greater than 25 years")
           else if(loantype=="car" && n>7)
           alert("for car loan duration can not be greater than 7 years")
-          else if(loantype=="personal" && n>25)
+          else if(loantype=="personal" && n>5)
           alert("for personal loan duration can not be greater than 5 years")
           else 
-            emi.value = p * r * (Math.pow(1+r,n)/(Math.pow(1+r,n) - 1))
+            emi.value = (p * r * (Math.pow(1+r,n)/(Math.pow(1+r,n) - 1)))/12
       }
 
       function Cal2(){
