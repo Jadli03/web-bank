@@ -23,13 +23,121 @@
     </nav>
      
     <main>
-      <div class="img-service">
+      <!-- <div class="img-service">
         <img src="img/bank-service.jpg"/>
+      </div> -->
+
+      <div class="services">
+        <div onClick="showLoanForm()" class="loan-service">
+          <h1>Loan</h1>
+        </div>
+        <div onClick="showDepositForm()" class="deposit-service">
+          <h1>Deposit</h1>
+        </div>
       </div>
+
+      <div class="loan-deposit" id="uloan-depo">
+      </div>
+
     </main>
 
     <footer>
          <h5>&copy; our bank copyright 2022</h5>
     </footer>
+
+    <script>
+      function showLoanForm(){
+        var str=`
+        <divname="floan"> 
+          Applicant Name<br>
+          <input type="text" id="uname" name="uname" required/><br>
+          Type<br>
+          <select id="loantype" onChange="loanRate()" name="type" required>
+            <option selected disabled>Select</option>
+            <option value="home">Home</option>
+            <option value="car">Car</option>
+            <option value="personal">Personal</option>
+          </select> 
+          <br>
+          Amount<br>
+          <input type="text" id="pamt" name="uamt" required/><br>
+          ROI<br>
+          <input type="text" id="roi" name="uroi" disabled/><br>
+          Duration<br>
+          <input type="text" id="du" name="uduration" name="uduration" required/><br>
+          EMI<br>
+          <input type="text" id="emi" name="uemi" disabled/><br>
+          <button onClick="Cal()"> Calculate </button>
+        </div>
+        `
+        document.getElementById("uloan-depo").innerHTML=str;
+      }
+
+
+      function showDepositForm(){
+        var str=`
+        <div name="fdeposit"> 
+          Amount<br>
+          <input type="text"id="damt" name="uamt" required/><br>
+          ROI<br>
+          <input type="text" id="droi" value="7" name="uroi" disabled/><br>
+          Duration<br>
+          <input type="text" id="ddu" name="uduration" required/><br>
+          Total Amount<br>
+          <input type="text" id="dtamt" name="uemi" disabled/><br>
+          <button onClick="Cal2()"> Calculate </button>
+        </div>
+        `
+        document.getElementById("uloan-depo").innerHTML=str;
+      }
+
+      function loanRate(){
+           var loantype = document.getElementById("loantype").value;
+           var rate = 0;
+
+           if(loantype == "home")
+            rate = 7;
+           else if(loantype == "car")
+           rate = 9;
+           else if(loantype == "personal")
+           rate=12;
+
+           document.getElementById("roi").value = rate;
+      }
+
+      function Cal(){
+
+        var p = Number(document.getElementById("pamt").value)
+        var r = Number(document.getElementById("roi").value)
+        var n = Number(document.getElementById("du").value)
+        var loantype = document.getElementById("loantype").value;
+        var emi = document.getElementById("emi")
+        r = r/100;
+
+        if(n== 0) 
+          alert("duration can not be 0");
+         else if(loantype=="home" && n>25)
+          alert("for home loan duration can not be greater than 25 years")
+          else if(loantype=="car" && n>7)
+          alert("for car loan duration can not be greater than 7 years")
+          else if(loantype=="personal" && n>25)
+          alert("for personal loan duration can not be greater than 5 years")
+          else 
+            emi.value = p * r * (Math.pow(1+r,n)/(Math.pow(1+r,n) - 1))
+      }
+
+      function Cal2(){
+
+var p = Number(document.getElementById("damt").value)
+var r = Number(document.getElementById("droi").value)
+var n = Number(document.getElementById("ddu").value)
+var total = document.getElementById("dtamt")
+r = r/100;
+    total.value = p*Math.pow((1+r/1), 1*n)
+
+}
+
+
+    </script>
 </body>
 </html>

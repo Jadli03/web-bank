@@ -115,6 +115,16 @@ main .loan-list ul li{
     padding: 10px;
 }
 
+.services {
+    display: flex;
+    justify-content: space-around;
+}
+
+.loan-deposit{
+    display: flex;
+    justify-content: center;
+}
+
 footer{
    margin-top: auto;
     padding: 10px 10px 0px 10px;
